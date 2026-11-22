@@ -3,180 +3,149 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>امتحان الرياضيات - الصف السادس</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>امتحان الرياضيات الإلكتروني | الصف السادس</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#eef2f8;color:#172033;font-family:Tahoma,Arial;line-height:1.9}
-.container{max-width:950px;margin:25px auto;background:white;padding:30px;border-radius:14px;box-shadow:0 5px 25px #0001}
-header{text-align:center;border-bottom:3px double #185adb;padding-bottom:18px}
-h1{color:#185adb;margin:8px}
-h2{background:#edf3ff;border-right:5px solid #185adb;padding:9px 13px;border-radius:6px;margin-top:28px}
-.info{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
-.info div{border:1px solid #ddd;padding:10px;border-radius:7px}
-.instructions{background:#fff8e5;padding:15px;border-radius:8px}
-.question{padding:16px 0;border-bottom:1px solid #ddd;break-inside:avoid}
-.qtitle{font-weight:bold;margin-bottom:10px}
-.options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.option{border:1px solid #ddd;padding:7px 12px;border-radius:7px}
-.space{height:105px;border:1px dashed #aaa;margin-top:12px;border-radius:6px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 29px,#ddd 30px)}
-button{border:0;padding:12px 20px;border-radius:8px;background:#185adb;color:white;font-size:15px;cursor:pointer;margin:5px}
-.secondary{background:#e8edf7;color:#172033}
-#answers{display:none;border-top:3px double #198754;margin-top:30px;padding-top:15px}
-#answers h2{background:#effaf4;border-color:#198754}
-.answer{padding:10px 0;border-bottom:1px solid #ddd}
-footer{text-align:center;color:#777;font-size:12px;margin-top:25px}
-@media(max-width:600px){.container{padding:16px;margin:0}.info{grid-template-columns:1fr}.options{grid-template-columns:1fr}}
+body{margin:0;background:#eef2f8;color:#19243a;font-family:Tahoma,Arial;line-height:1.8}
+header{background:linear-gradient(135deg,#123b87,#2878e8);color:white;padding:25px;text-align:center}
+header h1{margin:0;font-size:25px}
+header p{margin:5px}
+.container{max-width:850px;margin:22px auto;padding:20px}
+.card{background:white;border-radius:15px;padding:22px;box-shadow:0 4px 18px #0000000b;margin-bottom:18px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input[type=text]{width:100%;padding:12px;border:1px solid #ccd4e2;border-radius:8px;font:inherit}
+.stats{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.stat{background:#edf3ff;padding:12px;border-radius:9px;flex:1;text-align:center}
+.stat strong{display:block;font-size:22px;color:#185adb}
+.progress{height:9px;background:#e3e8f1;border-radius:20px;overflow:hidden;margin-top:14px}
+#bar{height:100%;width:0;background:#1b72e8;transition:.3s}
+#questionArea{min-height:300px}
+.qnumber{color:#185adb;font-weight:bold}
+.qtext{font-size:19px;font-weight:bold;margin:15px 0}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{border:2px solid #e1e6ef;padding:13px;border-radius:10px;cursor:pointer;transition:.2s}
+.opt:hover{border-color:#185adb;background:#f3f7ff}
+.opt.selected{background:#e7f0ff;border-color:#185adb;color:#1049a9;font-weight:bold}
+.opt.correct{background:#e5f8ed;border-color:#1b9c59}
+.opt.wrong{background:#fff0ef;border-color:#e24a4a}
+.controls{display:flex;justify-content:space-between;gap:10px;margin-top:25px}
+button{border:0;border-radius:9px;padding:12px 20px;font:inherit;font-weight:bold;cursor:pointer}
+.primary{background:#185adb;color:white}
+.gray{background:#e8edf5;color:#26344c}
+.green{background:#14834e;color:white}
+button:disabled{opacity:.4;cursor:not-allowed}
+#essayArea{display:none}
+textarea{width:100%;min-height:125px;border:1px solid #ccd4e2;border-radius:9px;padding:12px;font:inherit;resize:vertical}
+.essay{border-bottom:1px solid #e2e6ed;padding:18px 0}
+#result{display:none}
+.score{font-size:40px;color:#185adb;font-weight:bold;text-align:center}
+.review{padding:12px;border-bottom:1px solid #ddd}
+#key{display:none}
+.grade-input{width:75px;padding:8px;border:1px solid #ccc;border-radius:7px}
+.hidden{display:none}
+.badge{background:#eaf1ff;color:#185adb;padding:5px 10px;border-radius:20px;font-size:13px}
+@media(max-width:600px){
+.container{padding:12px}
+.options,.info{grid-template-columns:1fr}
+.controls button{padding:10px;font-size:13px}
+}
 @media print{
- body{background:white}
- .container{box-shadow:none;margin:0;max-width:none}
- .buttons{display:none}
- #answers{display:block!important}
+body{background:white}
+header{background:#123b87!important;color:white!important}
+button{display:none}
 }
 </style>
 </head>
 <body>
-<div class="container">
 
 <header>
-<p>وزارة التربية والتعليم – دولة الإمارات العربية المتحدة</p>
-<h1>نموذج امتحان تدريبي في الرياضيات</h1>
-<h3>الصف السادس – الفصل الدراسي الأول 2026–2027</h3>
-<p>مسار بريدج (Bridge) | الدرجة الكلية: 100 | الزمن: 90 دقيقة</p>
+<h1>🎓 امتحان الرياضيات الإلكتروني</h1>
+<p>الصف السادس | الفصل الأول 2026–2027</p>
+<p>منهج Bridge – دولة الإمارات العربية المتحدة</p>
 </header>
 
-<div class="info">
-<div>اسم الطالب: ....................................</div>
-<div>الشعبة: ....................................</div>
-<div>التاريخ: ....................................</div>
-<div>الدرجة: ........ / 100</div>
+<div class="container">
+
+<div class="card" id="start">
+<h2>مرحباً بك في الامتحان 👋</h2>
+<p>أدخل اسمك ثم اضغط بدء الامتحان.</p>
+<input type="text" id="student" placeholder="اسم الطالب">
+<br><br>
+<div class="stats">
+<div class="stat"><strong>25</strong>سؤالاً</div>
+<div class="stat"><strong>100</strong>درجة</div>
+<div class="stat"><strong>90</strong>دقيقة مقترحة</div>
+</div>
+<br>
+<p><b>الموضوعات:</b> النسب والمعدلات، الكسور والنسب المئوية، ضرب وقسمة الكسور، الأعداد الصحيحة والمستوى الإحداثي.</p>
+<button class="primary" onclick="startExam()">🚀 ابدأ الامتحان</button>
 </div>
 
-<div class="instructions">
-<strong>تعليمات الامتحان:</strong>
-<ul>
-<li>أجب عن جميع الأسئلة.</li>
-<li>لا تستخدم الآلة الحاسبة.</li>
-<li>اكتب خطوات الحل بالتفصيل في الأسئلة المقالية.</li>
-<li>كل سؤال عليه 4 درجات.</li>
-</ul>
+<div id="exam" class="hidden">
+
+<div class="card">
+<div class="stats">
+<div class="stat"><strong id="counter">1 / 25</strong>السؤال الحالي</div>
+<div class="stat"><strong id="done">0</strong>تمت الإجابة</div>
+<div class="stat"><strong>100</strong>الدرجة</div>
+</div>
+<div class="progress"><div id="bar"></div></div>
 </div>
 
-<h2>الجزء الأول: اختر الإجابة الصحيحة (80 درجة)</h2>
-
-<div id="mcq"></div>
-
-<h2>الجزء الثاني: الأسئلة المقالية (20 درجة)</h2>
-
-<div class="question">
-<div class="qtitle">21. تُحضّر مدرسة عصيراً بخلط 2 لتر من المركز مع 5 لترات من الماء.</div>
-أ) اكتب النسبة بين المركز والماء في أبسط صورة. (درجتان)<br>
-ب) إذا استخدمنا 10 لترات من الماء، فكم نحتاج من المركز؟ وضّح الحل. (درجتان)
-<div class="space"></div>
+<div class="card" id="questionArea">
+<div class="qnumber" id="qnumber"></div>
+<div class="qtext" id="qtext"></div>
+<div class="options" id="options"></div>
+<div class="controls">
+<button class="gray" onclick="move(-1)" id="prev">السابق</button>
+<button class="primary" onclick="move(1)" id="next">التالي</button>
+</div>
 </div>
 
-<div class="question">
-<div class="qtitle">22. أوجد التحويلات الآتية مع توضيح خطوات الحل:</div>
-أ) حوّل 3/4 إلى عدد عشري. (درجة)<br>
-ب) حوّل 0.2 إلى نسبة مئوية. (درجة)<br>
-ج) حوّل 45% إلى كسر اعتيادي في أبسط صورة. (درجتان)
-<div class="space"></div>
+<div class="card hidden" id="essayArea">
+<h2>✍️ الجزء الثاني: الأسئلة المقالية</h2>
+<p>اكتب خطوات الحل داخل المربعات. لكل سؤال 4 درجات.</p>
+<div id="essays"></div>
+<button class="primary" onclick="submitExam()">تسليم الامتحان وإنهاؤه</button>
 </div>
 
-<div class="question">
-<div class="qtitle">23. احسب ناتج العملية الآتية، موضحاً جميع خطوات الحل:</div>
-1 1/2 × 2 2/3
-<div class="space"></div>
 </div>
 
-<div class="question">
-<div class="qtitle">24. لدى خالد 3 1/2 بيتزا، ويريد توزيعها بحيث يحصل كل طبق على 1/2 بيتزا. كم طبقاً يمكنه ملؤه؟ اكتب جملة القسمة وخطوات الحل.</div>
-<div class="space"></div>
+<div class="card" id="result">
+<h2>🏆 نتيجة الامتحان</h2>
+<p id="welcome"></p>
+<div class="score" id="score">0 / 100</div>
+<div class="stats">
+<div class="stat"><strong id="mcqScore">0</strong>درجة الاختيار من متعدد</div>
+<div class="stat"><strong id="essayScore">0</strong>درجة المقالية</div>
+<div class="stat"><strong id="percent">0%</strong>النسبة المئوية</div>
+</div>
+<p id="message"></p>
+
+<h2>📋 تصحيح الاختيار من متعدد</h2>
+<div id="review"></div>
+
+<h2>📝 تصحيح الأسئلة المقالية</h2>
+<p>أدخل درجة كل سؤال مقالي بعد مراجعة الإجابة المكتوبة، من 0 إلى 4. الدرجات المقالية تُصحّح يدوياً.</p>
+<div id="essayGrading"></div>
+<br>
+<button class="green" onclick="updateScore()">تحديث الدرجة النهائية</button>
+<br><br>
+<button class="primary" onclick="showKey()">إظهار الحلول النموذجية</button>
+<button class="gray" onclick="window.print()">طباعة النتيجة</button>
+<button class="gray" onclick="location.reload()">امتحان جديد</button>
 </div>
 
-<div class="question">
-<div class="qtitle">25. تحرّك روبوت من نقطة الأصل (0 ، 0) إلى النقطة (−4 ، 3).</div>
-أ) في أي ربع تقع النقطة؟ (درجة)<br>
-ب) صف حركة الروبوت أفقياً ثم رأسياً. (درجتان)<br>
-ج) اكتب إحداثيي نقطة تقع على المحور السيني وتبعد 5 وحدات يسار نقطة الأصل. (درجة)
-<div class="space"></div>
+<div class="card" id="key">
+<h2>📚 مفتاح الإجابات النموذجية</h2>
+<div id="keyContent"></div>
 </div>
 
-<div class="buttons">
-<button onclick="toggleAnswers()">إظهار / إخفاء الإجابات</button>
-<button class="secondary" onclick="window.print()">طباعة الامتحان</button>
-</div>
-
-<div id="answers">
-<h2>مفتاح الإجابات النموذجية</h2>
-
-<div class="answer">1. أ) 2 : 3.</div>
-<div class="answer">2. ب) 60 كم/ساعة.</div>
-<div class="answer">3. ج) 20.</div>
-<div class="answer">4. ب) 9 : 12.</div>
-<div class="answer">5. ج) 6 أكواب.</div>
-<div class="answer">6. أ) 3/4.</div>
-<div class="answer">7. ج) 20%.</div>
-<div class="answer">8. ب) 0.35.</div>
-<div class="answer">9. ب) 5/8.</div>
-<div class="answer">10. ج) 20 درهماً.</div>
-<div class="answer">11. أ) 1/2.</div>
-<div class="answer">12. ج) 6.</div>
-<div class="answer">13. أ) 1.</div>
-<div class="answer">14. ج) 1 1/2.</div>
-<div class="answer">15. ب) 3 قطع.</div>
-<div class="answer">16. ب) −4.</div>
-<div class="answer">17. ج) 0 > −4.</div>
-<div class="answer">18. ج) 4°م.</div>
-<div class="answer">19. ب) الربع الثاني.</div>
-<div class="answer">20. د) (4 ، −3).</div>
-
-<h2>حلول الأسئلة المقالية</h2>
-
-<div class="answer">
-<strong>21.</strong><br>
-أ) النسبة 2 : 5.<br>
-ب) تضاعف الماء من 5 إلى 10، لذلك نضرب المركز في 2:<br>
-2 × 2 = 4 لترات.
-</div>
-
-<div class="answer">
-<strong>22.</strong><br>
-أ) 3 ÷ 4 = 0.75.<br>
-ب) 0.2 × 100 = 20%.<br>
-ج) 45% = 45/100 = 9/20.
-</div>
-
-<div class="answer">
-<strong>23.</strong><br>
-1 1/2 = 3/2<br>
-2 2/3 = 8/3<br>
-3/2 × 8/3 = 24/6 = 4.
-</div>
-
-<div class="answer">
-<strong>24.</strong><br>
-3 1/2 ÷ 1/2<br>
-= 7/2 ÷ 1/2<br>
-= 7/2 × 2/1<br>
-= 7 أطباق.
-</div>
-
-<div class="answer">
-<strong>25.</strong><br>
-أ) الربع الثاني.<br>
-ب) 4 وحدات إلى اليسار ثم 3 وحدات إلى الأعلى.<br>
-ج) (−5 ، 0).
-</div>
-
-<p><strong>ملاحظة:</strong> هذا نموذج تدريبي من إعدادنا وليس امتحاناً رسمياً صادراً عن الوزارة.</p>
-</div>
-
-<footer>نموذج تدريبي – رياضيات الصف السادس – 2026/2027</footer>
 </div>
 
 <script>
-const questions = [
+const questions=[
 ["في سلة 6 تفاحات و9 برتقالات. ما النسبة بين التفاحات والبرتقالات في أبسط صورة؟",["2 : 3","3 : 2","6 : 15","3 : 4"],0],
 ["تقطع سيارة 180 كم في 3 ساعات. ما معدل سرعتها؟",["30 كم/ساعة","60 كم/ساعة","90 كم/ساعة","120 كم/ساعة"],1],
 ["النسبة بين الأقلام والدفاتر 2 : 5. إذا كان عدد الأقلام 8، فكم عدد الدفاتر؟",["10","16","20","25"],2],
@@ -186,12 +155,12 @@ const questions = [
 ["ما النسبة المئوية المكافئة للكسر 1/5؟",["5%","10%","20%","50%"],2],
 ["حوّل 35% إلى عدد عشري.",["3.5","0.35","0.035","35.0"],1],
 ["أي الأعداد الآتية هو الأكبر؟",["0.6","5/8","55%","0.59"],1],
-["حقيبة سعرها 80 درهماً وعليها خصم 25%. ما مقدار الخصم؟",["10","15","20","25"],2],
+["حقيبة سعرها 80 درهماً وعليها خصم 25%. ما مقدار الخصم؟",["10 دراهم","15 درهماً","20 درهماً","25 درهماً"],2],
 ["ما ناتج 2/3 × 3/4؟",["1/2","5/7","6/7","2/3"],0],
 ["ما ناتج 3/5 × 10؟",["3","5","6","8"],2],
 ["ما ناتج 1 1/2 × 2/3؟",["1","1 1/3","2","3/4"],0],
 ["ما ناتج 3/4 ÷ 1/2؟",["3/8","1/2","1 1/2","2"],2],
-["لدى سارة 2 1/4 متر شريط، تقطعه إلى قطع طول كل منها 3/4 متر. كم قطعة تحصل عليها؟",["2","3","4","5"],1],
+["لدى سارة 2 1/4 متر شريط، تقطعه إلى قطع طول كل منها 3/4 متر. كم قطعة تحصل عليها؟",["قطعتان","3 قطع","4 قطع","5 قطع"],1],
 ["ما العدد الذي يقع 4 وحدات يسار الصفر؟",["4","−4","0","−8"],1],
 ["أي مقارنة صحيحة؟",["−2 > 1","−5 > −3","0 > −4","−1 > 2"],2],
 ["كانت الحرارة −3°م ثم ارتفعت 7 درجات. ما الحرارة الجديدة؟",["−10°م","−4°م","4°م","10°م"],2],
@@ -200,20 +169,176 @@ const questions = [
 ];
 
 const letters=["أ","ب","ج","د"];
-const area=document.getElementById("mcq");
+const essays=[
+"21. تخلط مدرسة 2 لتر من مركز العصير مع 5 لترات من الماء. اكتب النسبة في أبسط صورة، ثم احسب كمية المركز اللازمة عند استخدام 10 لترات من الماء.",
+"22. حوّل 3/4 إلى عدد عشري، و0.2 إلى نسبة مئوية، و45% إلى كسر اعتيادي في أبسط صورة.",
+"23. احسب 1 1/2 × 2 2/3. أظهر تحويل العددين الكسريين إلى كسرين غير فعليين.",
+"24. لدى خالد 3 1/2 بيتزا، ويريد توزيعها بحيث يحصل كل طبق على 1/2 بيتزا. كم طبقاً يمكنه ملؤه؟ اكتب خطوات الحل.",
+"25. تحرك روبوت من (0 ، 0) إلى (−4 ، 3). حدد الربع، وصف حركته، ثم اكتب إحداثيي نقطة تبعد 5 وحدات يسار الأصل على المحور السيني."
+];
 
-questions.forEach((q,i)=>{
- const div=document.createElement("div");
- div.className="question";
- div.innerHTML=`<div class="qtitle">${i+1}. ${q[0]}</div>
- <div class="options">${q[1].map((o,j)=>`<div class="option">${letters[j]}) ${o}</div>`).join("")}</div>`;
- area.appendChild(div);
-});
+const solutions=[
+"أ) 2 : 3، نقسم 6 و9 على 3.",
+"ب) 180 ÷ 3 = 60 كم/ساعة.",
+"ج) 20، لأن 2 × 4 = 8، إذن 5 × 4 = 20.",
+"ب) 9 : 12، نضرب 3 و4 في 3.",
+"ج) 6 أكواب، لأن 2 × 3 = 6.",
+"أ) 3/4، لأن 75/100 = 3/4.",
+"ج) 20%.",
+"ب) 0.35.",
+"ب) 5/8 = 0.625.",
+"ج) 20 درهماً، ربع 80.",
+"أ) 1/2.",
+"ج) 6.",
+"أ) 1.",
+"ج) 1 1/2.",
+"ب) 3 قطع.",
+"ب) −4.",
+"ج) 0 > −4.",
+"ج) 4°م.",
+"ب) الربع الثاني.",
+"د) (4 ، −3)."
+];
 
-function toggleAnswers(){
- const a=document.getElementById("answers");
- a.style.display=a.style.display==="block"?"none":"block";
- if(a.style.display==="block")a.scrollIntoView({behavior:"smooth"});
+let current=0;
+let answers=Array(20).fill(null);
+let essayAnswers=Array(5).fill("");
+let submitted=false;
+
+function startExam(){
+ const name=document.getElementById("student").value.trim();
+ if(!name){alert("اكتب اسم الطالب أولاً");return;}
+ document.getElementById("start").classList.add("hidden");
+ document.getElementById("exam").classList.remove("hidden");
+ document.getElementById("essays").innerHTML=essays.map((q,i)=>`
+ <div class="essay">
+ <b>${q}</b>
+ <textarea id="essay${i}" placeholder="اكتب خطوات الحل هنا..." oninput="essayAnswers[${i}]=this.value"></textarea>
+ </div>`).join("");
+ render();
+}
+
+function render(){
+ const q=questions[current];
+ document.getElementById("counter").textContent=(current+1)+" / 25";
+ document.getElementById("qnumber").textContent="السؤال "+(current+1)+" من 20 | 4 درجات";
+ document.getElementById("qtext").textContent=q[0];
+ document.getElementById("options").innerHTML=q[1].map((o,i)=>`
+ <div class="opt ${answers[current]===i?'selected':''}" onclick="choose(${i})">
+ ${letters[i]}) ${o}
+ </div>`).join("");
+ document.getElementById("prev").disabled=current===0;
+ document.getElementById("next").textContent=current===19?"انتقل للأسئلة المقالية":"التالي";
+ updateProgress();
+}
+
+function choose(i){
+ answers[current]=i;
+ render();
+}
+
+function updateProgress(){
+ const count=answers.filter(x=>x!==null).length;
+ document.getElementById("done").textContent=count;
+ document.getElementById("bar").style.width=(count/25*100)+"%";
+}
+
+function move(direction){
+ if(current===19&&direction===1){
+ document.getElementById("questionArea").style.display="none";
+ document.getElementById("essayArea").style.display="block";
+ document.getElementById("essayArea").scrollIntoView({behavior:"smooth"});
+ return;
+ }
+ current=Math.max(0,Math.min(19,current+direction));
+ render();
+}
+
+function submitExam(){
+ if(submitted)return;
+ const unanswered=answers.filter(x=>x===null).length;
+ if(unanswered>0&&!confirm("لديك "+unanswered+" أسئلة اختيار من متعدد دون إجابة. هل تريد التسليم؟"))return;
+ if(!confirm("هل أنت متأكد من تسليم الامتحان؟"))return;
+
+ for(let i=0;i<5;i++){
+ essayAnswers[i]=document.getElementById("essay"+i).value;
+ }
+ submitted=true;
+ let correct=0;
+ questions.forEach((q,i)=>{if(answers[i]===q[2])correct++;});
+ let score=correct*4;
+
+ document.getElementById("exam").classList.add("hidden");
+ document.getElementById("result").style.display="block";
+ document.getElementById("welcome").textContent="الطالب: "+document.getElementById("student").value;
+ document.getElementById("mcqScore").textContent=score+" / 80";
+ document.getElementById("essayScore").textContent="بانتظار التصحيح / 20";
+
+ document.getElementById("review").innerHTML=questions.map((q,i)=>{
+ let ok=answers[i]===q[2];
+ return `<div class="review">
+ <b>${i+1}. ${q[0]}</b><br>
+ إجابتك: ${answers[i]===null?"لم تجب":letters[answers[i]]+" - "+q[1][answers[i]]}<br>
+ <span style="color:${ok?'#14834e':'#d33'}">${ok?'✓ إجابة صحيحة':'✗ إجابة غير صحيحة'}</span><br>
+ الإجابة الصحيحة: <b>${letters[q[2]]}) ${q[1][q[2]]}</b>
+ </div>`;
+ }).join("");
+
+ document.getElementById("essayGrading").innerHTML=essays.map((q,i)=>`
+ <div class="essay">
+ <b>${q}</b>
+ <p><b>إجابة الطالب:</b></p>
+ <p>${escapeHTML(essayAnswers[i]||"لم يكتب إجابة").replace(/\n/g,"<br>")}</p>
+ <label>درجة السؤال من 4:</label>
+ <input class="grade-input" type="number" min="0" max="4" value="0" id="grade${i}">
+ </div>`).join("");
+
+ updateScore();
+ document.getElementById("result").scrollIntoView({behavior:"smooth"});
+}
+
+function escapeHTML(s){
+ return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function updateScore(){
+ let mcq=0;
+ questions.forEach((q,i)=>{if(answers[i]===q[2])mcq+=4;});
+ let essay=0;
+ for(let i=0;i<5;i++){
+ let v=Number(document.getElementById("grade"+i).value);
+ if(!Number.isFinite(v)||v<0||v>4){
+ alert("يجب أن تكون درجة كل سؤال بين 0 و4");
+ return;
+ }
+ essay+=v;
+ }
+ let total=mcq+essay;
+ document.getElementById("score").textContent=total+" / 100";
+ document.getElementById("mcqScore").textContent=mcq+" / 80";
+ document.getElementById("essayScore").textContent=essay+" / 20";
+ document.getElementById("percent").textContent=total+"%";
+ document.getElementById("message").textContent=
+ total>=90?"ممتاز! أداء رائع 🌟":
+ total>=80?"جيد جداً! أحسنت 👏":
+ total>=70?"جيد! استمر بالتدريب 👍":
+ total>=50?"تحتاج إلى بعض المراجعة. 💪":
+ "لا تستسلم، راجع الدروس وحاول مجدداً.";
+}
+
+function showKey(){
+ const k=document.getElementById("key");
+ k.style.display="block";
+ k.innerHTML=`<h2>📚 الحلول النموذجية</h2>
+ ${solutions.map((s,i)=>`<div class="review"><b>${i+1}.</b> ${s}</div>`).join("")}
+ <h2>حلول الأسئلة المقالية</h2>
+ <div class="review"><b>21.</b> النسبة 2 : 5. تضاعف الماء من 5 إلى 10، لذلك المركز 2 × 2 = 4 لترات.</div>
+ <div class="review"><b>22.</b> 3/4 = 0.75، و0.2 = 20%، و45% = 45/100 = 9/20.</div>
+ <div class="review"><b>23.</b> 1 1/2 = 3/2، و2 2/3 = 8/3. ثم 3/2 × 8/3 = 24/6 = 4.</div>
+ <div class="review"><b>24.</b> 3 1/2 ÷ 1/2 = 7/2 × 2/1 = 7 أطباق.</div>
+ <div class="review"><b>25.</b> الربع الثاني. 4 وحدات يساراً ثم 3 وحدات للأعلى. النقطة المطلوبة (−5 ، 0).</div>
+ <p>هذا نموذج تدريبي وليس امتحاناً رسمياً صادراً عن الوزارة.</p>`;
+ k.scrollIntoView({behavior:"smooth"});
 }
 </script>
 </body>
